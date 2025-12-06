@@ -1,0 +1,220 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #7c2148;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 90px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 10px 30px;
+    height: 80px; /* Slightly smaller height when scrolled */
+    background-color: rgba(124, 33, 72, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo img {
+    max-height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-logo img {
+    max-height: 45px;
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.menu-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.menu-item:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item:hover:before {
+    width: 80%;
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+
+    .navbar {
+        padding: 10px 20px;
+        height: 80px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #7c2148 0%, #cf5288 100%);
+        padding: 100px 20px 20px;
+        margin: 0;
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .menu.active {
+        display: flex !important;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .menu-item {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        padding: 15px 25px;
+        margin: 5px 0;
+        text-align: center;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideIn 0.4s ease forwards;
+        width: 200px;
+        background: transparent;
+    }
+    
+    .hamburger {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .menu-item:nth-child(1) { animation-delay: 0.1s; }
+    .menu-item:nth-child(2) { animation-delay: 0.2s; }
+    .menu-item:nth-child(3) { animation-delay: 0.3s; }
+    .menu-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .menu-item:hover {
+        background-color: white;
+        color: #7c2148;
+        transform: translateX(5px);
+        font-weight: bold;
+    }
+
+    .menu-item::before {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .hamburger::before {
+        content: '';
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger:hover::before {
+        transform: scale(1);
+    }
+
+    .hamburger.cross {
+        transform: rotate(180deg);
+    }
+}
