@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <!-- Google Fonts Link for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ 
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+
+    
+        .big-letter{
+            font-size: xxx-large;
+        }
+        .about-us {
+            padding: 80px 40px;
+            background: linear-gradient(to bottom, #fff, rgba(124, 33, 72, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-us::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #7c2148, transparent);
+        }
+
+        .about-us h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-us h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #7c2148, transparent);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 25px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .about-content p strong {
+            color: #7c2148;
+            font-weight: 600;
+        }
+
+        .about-highlight {
+            background-color: rgba(124, 33, 72, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            box-shadow: 0 5px 15px rgba(124, 33, 72, 0.1);
+            border: 1px solid rgba(124, 33, 72, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(124, 33, 72, 0.15);
+        }
+
+        .about-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .about-icon-item {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            padding: 20px;
+        }
+
+        .about-icon-item i {
+            font-size: 2.5em;
+            color: #7c2148;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-icon-item:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .about-icon-item h4 {
+            color: #7c2148;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .about-icon-item p {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.6;
+        }
+        .our-services {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, rgba(124, 33, 72, 0.05), rgba(124, 33, 72, 0.02));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .our-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #7c2148, transparent);
+        }
+
+        .our-services::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #7c2148, transparent);
+        }
+
+        .our-services h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .our-services h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #7c2148, transparent);
+        }
+        #carouselExampleIndicators {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+        .our_prog {
+            padding: 60px 20px;
+            background-color: rgba(124, 33, 72, 0.03);
+            position: relative;
+        }
+        
+        .our_prog::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #7c2148;
+        }
+
+        .our_prog h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .our_prog > p {
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+    /* Set image dimensions and maintain aspect ratio */
+    .custom-carousel-image {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 1024px) {
+        .custom-carousel-image {
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .custom-carousel-image {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-carousel-image {
+            height: 200px;
+        }
+    }
+
+    .animate__animated animate__backInLeft {
+     --animate-duration: 5s;
+   }
+   .main-name{
+            text-align: center;
+            margin-top: 130px;
+            color: #7c2148;
+
+        }
+
+        .box_carousel {
+            width: 80%;
+            height: auto;
+            max-width: 1600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(145deg, #7c2148, #a52960);
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 40px rgba(124, 33, 72, 0.3),
+                inset 0 -10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .box_carousel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right,
+                transparent,
+                rgba(255, 255, 255, 0.5),
+                transparent);
+        }
+
+        .box_carousel::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right,
+                transparent,
+                rgba(0, 0, 0, 0.2),
+                transparent);
+        }
+
+        .carousel {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 8px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .box_carousel:hover .carousel-control-prev,
+        .box_carousel:hover .carousel-control-next {
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: 20px;
+        }
+
+        .carousel-control-next {
+            right: 20px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .custom-carousel-image {
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item.active .custom-carousel-image {
+            transform: scale(1.02);
+        }
+    
+
+    .service-sections {
+    display: flex;
+    gap: 30px;
+    padding: 40px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.service {
+    flex: 1;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #7c2148;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(124, 33, 72, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.service:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 35px rgba(124, 33, 72, 0.2);
+    border-color: transparent;
+    background: linear-gradient(145deg, #ffffff, #fff5f8);
+}
+
+.service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(124, 33, 72, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service:hover::before {
+    opacity: 1;
+}
+
+.service::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #7c2148, #cf5288);
+    z-index: -1;
+    border-radius: 22px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service:hover::after {
+    opacity: 0.3;
+}
+
+.service h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #7c2148;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service h3 i {
+    font-size: 1.2em;
+}
+
+.service ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service li {
+    margin-bottom: 25px;
+    font-size: 1em;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    background-color: rgba(124, 33, 72, 0.03);
+    border: 1px solid transparent;
+}
+
+.service li:hover {
+    background-color: #fff;
+    transform: translateX(8px);
+    border: 1px solid rgba(124, 33, 72, 0.2);
+    box-shadow: 0 5px 15px rgba(124, 33, 72, 0.1);
+}
+
+.service li i {
+    color: #7c2148;
+    font-size: 1.3em;
+    padding: 12px;
+    background: rgba(124, 33, 72, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.service li:hover i {
+    background: #7c2148;
+    color: #fff;
+    transform: rotateY(180deg);
+}
+
+.service li div {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.service li strong {
+    color: #7c2148;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+}
+
+.service li p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.service li:hover p {
+    color: #333;
+}
+
+
+.services-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    text-align: left;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid #7c2148;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(124, 33, 72, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: 25px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin: 0 0 15px 0;
+    color: #7c2148;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-card h3 i {
+    font-size: 1.2em;
+}
+
+.service-card-details {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(124, 33, 72, 0.05);
+    border-radius: 12px;
+}
+
+.service-card-details p {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.service-card-details i {
+    color: #7c2148;
+}
+
+.service-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: #fff;
+    background-color: #7c2148;
+    border-radius: 50px;
+    border: none;
+    margin: 10px 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.service-button:hover {
+    background-color: #cf5288;
+    transform: translateX(5px);
+}
+
+.service-button .arrow {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+.program-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(124, 33, 72, 0.9);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.hamburger {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001; /* Keep it above the menu */
+}
+
+/* footer*/
+.footer {
+    background-color: #7c2148;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.footer-section p, .footer-links li {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.footer-links li a::before {
+    content: '→';
+    opacity: 0;
+    margin-right: 8px;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.footer-links li:hover {
+    transform: translateX(5px);
+}
+
+.footer-links li:hover a {
+    color: #fff;
+}
+
+.footer-links li:hover a::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.footer-links li:hover a::after {
+    width: 100%;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #cf5288;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #cf5288;
+    padding-top: 10px;
+    font-size: 0.85em;
+}
+.back-to-top {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .service-sections {
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    .box_carousel {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .services-wrapper {
+        gap: 20px;
+    }
+
+    .service-card {
+        min-width: 280px;
+    }
+
+    .footer-container {
+        padding: 0 15px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .service-sections {
+        flex-direction: column;
+    }
+
+    .services-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .service-card {
+        max-width: 100%;
+    }
+
+    .custom-carousel-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .box_carousel {
+        width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+
+
+    .welcome {
+        margin: 10px;
+        padding: 0 15px;
+    }
+
+    .welcome p {
+        font-size: 1.1em;
+    }
+
+    .main-name {
+        margin-top: 100px;
+    }
+
+    .main-name h2 {
+        font-size: 2em;
+    }
+
+    .main-name h4 {
+        font-size: 1.2em;
+    }
+
+    .about-us {
+        padding: 40px 20px;
+    }
+
+    .about-us h2, .our-services h2, .our_prog h2 {
+        font-size: 1.8em;
+    }
+
+    .service {
+        margin-bottom: 20px;
+    }
+
+    .service li {
+        padding: 15px;
+    }
+
+    .footer-section {
+        text-align: center;
+        min-width: 100%;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+
+
+    .main-name h2 {
+        font-size: 1.8em;
+    }
+
+    .main-name h4 {
+        font-size: 1em;
+    }
+
+    .welcome p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .service-card-content {
+        padding: 15px;
+    }
+
+    .service-card h3 {
+        font-size: 1.3em;
+    }
+
+    .service-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+ 
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo"><img src="Abida 60px.png" alt=""></div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu -->
+        <div class="menu">
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="academy.html" class="menu-item">Training Institute</a>
+            <a href="gallery.html" class="menu-item">Gallery</a>
+            <a href="contact.html" class="menu-item">Contact Us</a>
+        </div>
+    </nav>
+    
+    <script src="js/navbar.js"></script>
+    
+    
+   
+    
+
+<div class="animate__animated animate__backInLeft">
+
+
+    <div class="main-name">
+        
+        <h2 style="font-weight: bolder;"><span class="big-letter">A</span>BIDA</h2>
+        <h4 style="font-weight: bolder;">BEAUTY ACADEMY & SALOON</h4>
+    </div>
+</div>    
+
+    <br><br>
+
+    <div class="welcome">
+        
+        <p style="text-align: center;font-size: larger;font-weight: bold;font-style: italic;">Welcome to Abida Beauty Academy and Salon, where passion meets beauty. <br> Our expert team is dedicated to delivering exceptional beauty experiences, transforming your look and elevating your confidence. <br> Discover your natural radiance with our range of services.</p>
+
+    </div>
+    <div class="about-us">
+        <h2 style="color: #7c2148;"><span class="big-letter">A</span>bout us..</h2>
+        <p style="font-weight: 300;text-align: center;">
+            <i>
+
+            
+            Welcome to Abida Beauty Academy and Salon, where we believe that true beauty radiates from within and is an expression of individuality and confidence. Our journey began with a deep-rooted passion for transforming lives, not just through outer appearances but by helping individuals embrace their unique beauty and feel empowered in their own skin.
+
+            Founded on a commitment to excellence and innovation, we have gathered years of experience and expertise in the beauty industry. Our dedicated team of professionals brings the latest techniques and trends, ensuring that every client and student receives nothing less than the best. Whether you’re seeking to elevate your personal style with our salon services or looking to embark on a rewarding career in beauty, we are here to guide and inspire you.
+            
+            At Abida Beauty Academy and Salon, each experience is crafted to leave a lasting impression, combining luxury, comfort, and meticulous attention to detail. From personalized treatments to hands-on, in-depth training programs, our mission is to make beauty an accessible journey for everyone. Join us, and let’s make your beauty aspirations a stunning reality."</p>    
+           
+            </i>
+        </div>
+
+    <br>
+
+    <div class="our-services">
+        <h2 style="color: #7c2148;"><span class="big-letter">O</span>ur Services..</h2>
+        <br>
+        
+        <div class="service-sections">
+            <div class="service">
+                <h3><i class="fas fa-cut"></i> Hair Services</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-scissors"></i>
+                        <div>
+                            <strong>Hairstyling</strong>
+                            <p>Professional cuts, vibrant colors, and stunning highlights tailored to your style</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-pump-soap"></i>
+                        <div>
+                            <strong>Hair Texturing</strong>
+                            <p>Premium keratin treatments and smoothing services for silky, manageable hair</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-magic"></i>
+                        <div>
+                            <strong>Hair Extension</strong>
+                            <p>Expert weaving and bonding techniques for natural-looking length and volume</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="service">
+                <h3><i class="fas fa-spa"></i> Skin Services</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <strong>Facials</strong>
+                            <p>Customized and anti-aging treatments to rejuvenate and nourish your skin</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <strong>Skin Treatments</strong>
+                            <p>Advanced chemical peels and microdermabrasion for radiant, youthful skin</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Skin Care</strong>
+                            <p>Expert consultation and personalized product recommendations for your skin type</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="service">
+                <h3><i class="fas fa-paint-brush"></i> Makeup Services</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-crown"></i>
+                        <div>
+                            <strong>Bridal Makeup</strong>
+                            <p>Stunning bridal looks that enhance your natural beauty on your special day</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-glass-cheers"></i>
+                        <div>
+                            <strong>Party Makeup</strong>
+                            <p>Glamorous and long-lasting makeup for all your special occasions</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-book"></i>
+                        <div>
+                            <strong>Makeup Lessons</strong>
+                            <p>Learn professional techniques for creating everyday beautiful looks</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+
+ <br><br>
+ <br>
+
+
+        <div class="box_carousel">
+
+       
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="maxim-abramov-GFjyimhomaM-unsplash.jpg" class="custom-carousel-image" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="meritt-thomas-i3A72pqXxAI-unsplash.jpg" class="custom-carousel-image" alt="...">
+                </div>
+                <div class="carousel-item">
+                    
+                    <video src="hangman_game - Jupyter Notebook - Google Chrome 2024-02-04 12-56-26.mp4" class="custom-carousel-image" alt="..." autoplay muted loop controls></video>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+    </div>
+</div>
+    
+    <br><br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+   
+    <!-- Calendly badge widget begin -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+    .calendly-badge-widget {
+        right: 20px !important;
+        bottom: 20px !important;
+        transform: translateY(0) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .calendly-badge-widget .calendly-badge-content {
+        background: linear-gradient(145deg, #7c2148, #a52960) !important;
+        padding: 12px 25px !important;
+        border-radius: 50px !important;
+        font-family: 'Poppins', sans-serif !important;
+        font-weight: 500 !important;
+        box-shadow: 0 4px 15px rgba(124, 33, 72, 0.2) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .calendly-badge-widget:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    .calendly-badge-widget:hover .calendly-badge-content {
+        background: linear-gradient(145deg, #a52960, #7c2148) !important;
+        box-shadow: 0 6px 20px rgba(124, 33, 72, 0.3) !important;
+    }
+
+    @media (max-width: 768px) {
+        .calendly-badge-widget {
+            right: 50% !important;
+            transform: translateX(50%) !important;
+        }
+        
+        .calendly-badge-widget:hover {
+            transform: translateX(50%) translateY(-5px) !important;
+        }
+    }
+</style>
+<script type="text/javascript">
+window.onload = function() { 
+    Calendly.initBadgeWidget({ 
+        url: 'https://calendly.com/sriramramanadham355/makeovers', 
+        text: 'Book an appointment', 
+        color: '#7c2148', 
+        textColor: '#ffffff'
+    }); 
+}
+</script>
+<!-- Calendly badge widget end -->
+
+
+    <div class="our_prog">
+        <h2 style="color: #7c2148;"><span class="big-letter">O</span>ur Programs..</h2>
+        <br>
+        <p>Abida Beauty Academy offers comprehensive courses in:</p>
+
+
+        <div class="services-wrapper">
+            <!-- Hair Styling and Design Card -->
+            <div class="service-card">
+                <span class="program-tag">Professional Course</span>
+                <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2" alt="Hair Styling and Design">
+                <div class="service-card-content">
+                    <h3><i class="fas fa-cut"></i>Hair Styling and Design</h3>
+                    <div class="service-card-details">
+                        <p><i class="fas fa-book"></i>25 Topics Covered</p>
+                        <p><i class="fas fa-clock"></i>6 Months Duration</p>
+                        <p><i class="fas fa-certificate"></i>Professional Certification</p>
+                        <p><i class="fas fa-users"></i>Small Batch Size</p>
+                    </div>
+                    <p>Master the art of hair styling with hands-on training in cutting, coloring, and advanced styling techniques.</p>
+                    <a href="academy.html">
+                        <button class="service-button">View Course Details<span class="arrow">&rarr;</span></button>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- Skin Care and Treatment Card -->
+            <div class="service-card">
+                <span class="program-tag">Professional Course</span>
+                <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2" alt="Skin Care and Treatment">
+                <div class="service-card-content">
+                    <h3><i class="fas fa-spa"></i>Skin Care and Treatment</h3>
+                    <div class="service-card-details">
+                        <p><i class="fas fa-book"></i>25 Topics Covered</p>
+                        <p><i class="fas fa-clock"></i>6 Months Duration</p>
+                        <p><i class="fas fa-certificate"></i>Professional Certification</p>
+                        <p><i class="fas fa-flask"></i>Practical Training</p>
+                    </div>
+                    <p>Learn advanced skincare techniques, facial treatments, and professional product application methods.</p>
+                    <a href="academy.html">
+                        <button class="service-button">View Course Details<span class="arrow">&rarr;</span></button>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- Makeup Artistry Card -->
+            <div class="service-card">
+                <span class="program-tag">Professional Course</span>
+                <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&dpr=2" alt="Makeup Artistry">
+                <div class="service-card-content">
+                    <h3><i class="fas fa-paint-brush"></i>Makeup Artistry Proficiency</h3>
+                    <div class="service-card-details">
+                        <p><i class="fas fa-book"></i>25 Topics Covered</p>
+                        <p><i class="fas fa-clock"></i>6 Months Duration</p>
+                        <p><i class="fas fa-certificate"></i>Professional Certification</p>
+                        <p><i class="fas fa-palette"></i>Portfolio Development</p>
+                    </div>
+                    <p>Discover professional makeup techniques for bridal, fashion, and special effects artistry. Also get professional Certification.</p>
+                    <a href="academy.html">
+                        <button class="service-button">View Course Details<span class="arrow">&rarr;</span></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+
+
+
+
+
+
+</body>
+<footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Section 1: Logo and About -->
+            <div class="footer-section">
+                <h3>Abida Beauty Academy</h3>
+                <p>
+                    Transforming lives through beauty. Join us for exceptional services and world-class training in the beauty industry.
+                </p>
+            </div>
+    
+            <!-- Section 2: Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="academy.html">Training Institute</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Section 3: Contact Info -->
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><strong>Email:</strong> contact@abidabeauty.com</p>
+                <p><strong>Phone:</strong> +1 234-567-890</p>
+                <p><strong>Address:</strong> 123 Beauty Lane, Glam City</p>
+            </div>
+    
+            <!-- Section 4: Social Media Links -->
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <a href="#top" class="back-to-top">Back to Top</a>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Abida Beauty Academy. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</footer>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Abida Academy</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Animate.css for additional effects -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/navbar.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            padding-top: 70px; /* To prevent content from being hidden behind the fixed navbar */
+        }
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 80px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(124, 33, 72, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+        }
+
+        /* Section Title */
+        .gallery-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 100px 0 30px;
+            color: #7c2148;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .gallery-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #7c2148, #cf5288);
+            border-radius: 2px;
+        }
+        
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .gallery {
+        margin-top: 60px;
+    }
+}
+
+ 
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo"><img src="Abida 60px.png" alt=""></div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger menu -->
+        <div class="menu">
+            <a href="index.html" class="menu-item">Home</a>
+            <a href="academy.html" class="menu-item">Training Institute</a>
+            <a href="gallery.html" class="menu-item">Gallery</a>
+            <a href="contact.html" class="menu-item">Contact Us</a>
+        </div>
+    </nav>
+    
+    <script src="js/navbar.js"></script>
+    
+   
+
+
+    <!-- Gallery Section -->
+    <section>
+        <h2 class="gallery-title">Experience Our Beauty Haven</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em;">
+            Take a glimpse into our world of beauty and excellence
+        </p>
+        <div class="gallery">
+            <!-- Salon Exterior -->
+            <img src="https://plus.unsplash.com/premium_photo-1661764256397-af154e87b1b3?w=800&auto=format&fit=crop" alt="Salon Exterior View" loading="lazy">
+            <img src="https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?w=800" alt="Salon Entrance" loading="lazy">
+            
+            <!-- Salon Interior -->
+            <img src="https://images.pexels.com/photos/705670/pexels-photo-705670.jpeg?w=800" alt="Modern Salon Interior" loading="lazy">
+            <img src="https://images.pexels.com/photos/3993133/pexels-photo-3993133.jpeg?w=800" alt="Styling Station" loading="lazy">
+            <img src="https://images.pexels.com/photos/3993324/pexels-photo-3993324.jpeg?w=800" alt="Salon Seating Area" loading="lazy">
+            <img src="https://images.pexels.com/photos/3993466/pexels-photo-3993466.jpeg?w=800" alt="Hair Washing Station" loading="lazy">
+            
+            <!-- Hair Styling Services -->
+            <img src="https://images.pexels.com/photos/3993401/pexels-photo-3993401.jpeg?w=800" alt="Hair Styling" loading="lazy">
+            <img src="https://images.pexels.com/photos/3993435/pexels-photo-3993435.jpeg?w=800" alt="Hair Coloring" loading="lazy">
+            <img src="https://images.pexels.com/photos/3993320/pexels-photo-3993320.jpeg?w=800" alt="Hair Treatment" loading="lazy">
+            
+            <!-- Makeup Services -->
+            <img src="https://images.pexels.com/photos/2113855/pexels-photo-2113855.jpeg?w=800" alt="Professional Makeup" loading="lazy">
+            <img src="https://images.pexels.com/photos/457701/pexels-photo-457701.jpeg?w=800" alt="Bridal Makeup" loading="lazy">
+            <img src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg?w=800" alt="Makeup Products" loading="lazy">
+            
+            <!-- Skincare Services -->
+            <img src="https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?w=800" alt="Facial Treatment" loading="lazy">
+            <img src="https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?w=800" alt="Skin Care" loading="lazy">
+            <img src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?w=800" alt="Spa Treatment" loading="lazy">
+            
+            <!-- Nail Services -->
+            <img src="https://images.pexels.com/photos/939836/pexels-photo-939836.jpeg?w=800" alt="Nail Art" loading="lazy">
+            <img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?w=800" alt="Manicure Service" loading="lazy">
+            <img src="https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?w=800" alt="Pedicure Service" loading="lazy">
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.createElement('div');
+                lightbox.id = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.background = 'rgba(0, 0, 0, 0.8)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '1000';
+    
+                const imgClone = img.cloneNode();
+                imgClone.style.maxWidth = '80%';
+                imgClone.style.maxHeight = '80%';
+                lightbox.appendChild(imgClone);
+    
+                document.body.appendChild(lightbox);
+    
+                lightbox.addEventListener('click', () => {
+                    lightbox.remove();
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
